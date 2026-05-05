@@ -1,10 +1,17 @@
 pluginManagement {
     repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        mavenCentral()
+        maven { url 'https://maven.fabricmc.net/' }           // Fabric 插件，必须保留
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        maven { url 'https://maven.fabricmc.net/' }           // Fabric 依赖（loader, yarn 等）
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
     }
 }
